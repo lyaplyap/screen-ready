@@ -1,0 +1,104 @@
+/* Base styles */
+.button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font: inherit;
+    display: flex;
+    gap: 6px;
+    padding: 0 16px;
+    align-items: center;
+    vertical-align: middle;
+    height: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.button:focus-visible {
+    outline: 2px solid var(--figma-color-border-selected);
+    outline-offset: 1px;
+}
+
+.button__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.button--iconic {
+    padding: 0 12px;
+}
+
+/* Action */
+.button--type_action {
+    color: var(--figma-color-text-onbrand);
+    background-color: var(--figma-color-bg-brand);
+}
+
+.button--type_action:hover {
+    background-color: var(--figma-color-bg-brand-hover);
+}
+
+.button--type_action:active {
+    background-color: var(--figma-color-bg-brand-pressed);
+}
+
+.button--type_action:disabled {
+    color: var(--figma-color-text-disabled);
+    background-color: var(--figma-color-bg-brand-tertiary);
+}
+
+.button--type_action.button--progress {
+    color: var(--figma-color-text-onbrand);
+    background-color: var(--figma-color-bg-brand-secondary);
+    cursor: wait;
+}
+
+/* Default */
+.button--type_default {
+    color: var(--figma-color-text);
+    background-color: var(--figma-color-bg-secondary);
+}
+
+.button--type_default:hover {
+    background-color: var(--figma-color-bg-tertiary);
+}
+
+.button--type_default:active {
+    background-color: var(--figma-color-bg-pressed);
+}
+
+.button--type_default:disabled {
+    color: var(--figma-color-text-disabled);
+    background-color: var(--figma-color-bg-tertiary);
+}
+
+.button--type_default.button--progress {
+    color: var(--figma-color-border-strong);
+    background-color: var(--figma-color-bg-pressed);
+    cursor: wait;
+}
+
+/* Clear */
+.button--type_clear {
+    color: var(--figma-color-text-secondary);
+    background-color: transparent;
+}
+
+.button--type_clear:hover {
+    color: var(--figma-color-text-secondary-hover);
+    background-color: var(--figma-color-bg-hover);
+}
+
+.button--type_clear:active {
+    color: var(--figma-color-text-secondary-hover);
+    background-color: var(--figma-color-bg-pressed);
+}
+
+.button--type_clear:disabled {
+    color: var(--figma-color-text-disabled);
+}
+
+.button--type_clear.button--progress {
+    color: var(--figma-color-border-strong);
+    cursor: wait;
+}

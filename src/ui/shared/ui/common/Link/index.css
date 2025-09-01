@@ -1,0 +1,37 @@
+.link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.link--type_primary {
+    color: var(--figma-color-text-brand);
+}
+
+.link--type_primary:hover {
+    color: var(--figma-color-bg-brand-secondary);
+}
+
+.link--type_secondary {
+    color: var(--figma-color-text-secondary);
+}
+
+.link--type_secondary:hover {
+    color: var(--figma-color-text-secondary-hover);
+}
+
+.link--underline {
+    text-decoration: underline;
+}
+
+.link__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.link:focus-visible {
+    border-radius: 2px;
+    outline-offset: 1px;
+    outline: 2px solid var(--figma-color-border-selected);
+}

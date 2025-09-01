@@ -1,0 +1,12 @@
+.aria-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.aria-header__headline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

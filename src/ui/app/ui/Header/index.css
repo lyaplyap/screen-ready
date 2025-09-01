@@ -1,0 +1,10 @@
+.header {
+    position: relative;
+    margin: 16px;
+}
+
+.header > *:last-child {
+    position: absolute;
+    right: 0;
+    top: 0;
+}

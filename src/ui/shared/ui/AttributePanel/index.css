@@ -1,0 +1,12 @@
+.attribute-panel {
+    margin: 8px 12px 24px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.attribute-panel__header {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

@@ -1,0 +1,27 @@
+.trigger-bar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 24px 24px 0 0;
+    background-color: var(--figma-color-bg-secondary);
+}
+
+.trigger-bar__values {
+    color: inherit;
+    min-width: 0;
+    align-self: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--figma-color-text-secondary);
+}
+
+.trigger-bar__values > * {
+    display: inline;
+    white-space: nowrap;
+}
+
+.trigger-bar__values > *:first-child {
+    color: var(--figma-color-text)
+}

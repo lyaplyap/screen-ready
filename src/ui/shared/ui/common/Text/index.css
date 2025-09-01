@@ -1,0 +1,85 @@
+.typography {
+    font-family: "Inter";
+    font-style: normal;
+}
+
+.typography--color_primary {
+    color: var(--figma-color-text-primary);
+}
+
+.typography--color_secondary {
+    color: var(--figma-color-text-secondary);
+}
+
+.typography--type_title-xl {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 36px;
+}
+
+.typography--type_title-l {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.typography--type_title-m {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.typography--type_title-s {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.typography--type_title-xs {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.typography--type_text-m {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.typography--type_text-m-medium {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.typography--type_text-s {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.typography--type_text-s-medium {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.typography--type_caption {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+}
+
+.typography--type_caption-medium {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+.typography_limited {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

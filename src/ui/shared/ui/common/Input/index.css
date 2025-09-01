@@ -1,0 +1,36 @@
+.input__container {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.input__label {
+    padding: 6px 8px 8px 6px;
+    border-radius: 6px;
+    background-color: var(--figma-color-bg-secondary);
+}
+
+.input__input {
+    border: none;
+    color: var(--figma-color-text);
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    width: 240px;
+    height: 100%;
+    padding: 4px 8px;
+    gap: 6px;
+    border-radius: 8px;
+    background: var(--figma-color-bg-secondary);
+}
+
+.input__input:focus-visible {
+    outline: 2px solid var(--figma-color-border-selected);
+    outline-offset: 1px;
+}
+
+.input__input::placeholder {
+    color: var(--figma-color-text-secondary);
+}
