@@ -24,10 +24,10 @@ const getStatesLabel = (attributes: Attribute[], t: TFunc) => {
 };
 
 const getNameLabel = (attributes: Attribute[], frame: SceneNode) => {
-    const ariaLabel: string | undefined = attributes['aria-label'];
+    const ariaLabel = attributes.find(({ id }) => id === 'aria-label');
 
     if (ariaLabel) {
-        return ariaLabel;
+        return ariaLabel.value;
     }
 
     const nativeName = extractTextFromFrame(frame);
