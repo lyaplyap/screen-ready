@@ -1,10 +1,11 @@
 {
     "name": "Screen Ready",
-    "id": "screen-ready",
+    "id": "1550180535313998477",
     "api": "1.0.0",
     "main": "dist/code.js",
     "ui": "dist/ui.html",
     "editorType": ["figma"],
+    "documentAccess": "dynamic-page",
     "networkAccess": {
         "allowedDomains": ["none"]
     }
