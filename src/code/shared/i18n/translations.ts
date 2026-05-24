@@ -8,11 +8,11 @@ export const TRANSLATIONS = {
         'role--checkbox': 'checkbox',
         'role--switch': 'switch',
         // aria-disabled
-        'aria-disabled_true': 'dimmed',
+        'aria-disabled--true': 'dimmed',
         // aria-haspopup
         'aria-haspopup--true': 'menu pop-up',
         'aria-haspopup--menu': 'menu pop-up',
-        'aria-haspopup--lisbox': 'listbox pop-up',
+        'aria-haspopup--listbox': 'listbox pop-up',
         'aria-haspopup--tree': 'tree pop-up',
         'aria-haspopup--grid': 'grid pop-up',
         'aria-haspopup--dialog': 'dialogue pop-up',
@@ -52,7 +52,7 @@ export const TRANSLATIONS = {
         // aria-haspopup
         'aria-haspopup--true': 'есть попап с меню',
         'aria-haspopup--menu': 'есть попап с меню',
-        'aria-haspopup--lisbox': 'есть попап со списком',
+        'aria-haspopup--listbox': 'есть попап со списком',
         'aria-haspopup--tree': 'есть попап с деревом',
         'aria-haspopup--grid': 'есть попап с сеткой',
         'aria-haspopup--dialog': 'есть попап с модальным окном',

@@ -8,7 +8,7 @@ const globals = require('globals');
 
 module.exports = tseslint.config(
     {
-        ignores: ['dist/', 'node_modules/', 'webpack.config.js', 'eslint.config.js'],
+        ignores: ['dist/', 'node_modules/', 'webpack.config.js', 'eslint.config.js', 'jest.config.js'],
     },
     js.configs.recommended,
     ...tseslint.configs.recommended,
