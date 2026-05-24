@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { useTranslation } from '../../i18n';
-import { AttributeStore } from '../../../store';
+import { useTranslation } from '@ui/shared/i18n';
+import { type AttributeStore } from '@ui/store';
+
 import { AriaHeader } from '../AriaHeader';
 import { AttributeValues } from '../AttributeValues';
 import { W3C } from '../W3C';

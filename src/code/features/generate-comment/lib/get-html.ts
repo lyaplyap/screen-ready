@@ -1,4 +1,4 @@
-import { Role } from '../types';
+import { type Role } from '../types';
 
 export const getHTMLAttributes = ({ role, attributes }: Role) => {
     const htmlAttributes: string[] = [];

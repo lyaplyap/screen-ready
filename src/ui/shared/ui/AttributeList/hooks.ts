@@ -63,7 +63,7 @@ export const useKeyboardNavigation = (
         if (focusedIndex >= 0 && listRef.current) {
             const items = listRef.current.querySelectorAll('li');
             const focusedItem = items[focusedIndex];
-            
+
             if (focusedItem) {
                 const button = focusedItem.querySelector('button');
                 if (button) {
@@ -80,6 +80,6 @@ export const useKeyboardNavigation = (
     return {
         listRef,
         focusedIndex,
-        handleItemFocus,
+        handleItemFocus
     };
 };

@@ -1,5 +1,5 @@
-import React from 'react';
 import cn from 'classnames';
+import React from 'react';
 
 import { Text } from '../Text';
 
@@ -23,11 +23,11 @@ export const RadioGroup: React.FC<RadioGroupProps> = (props) => {
 
     const { getRadioGroupProps, getRadioProps } = useRadioGroup(props);
 
-    return (    
+    return (
         <div {...getRadioGroupProps()} className="radiogroup">
             {options.map(({ value, label }, index) => {
                 const isChecked = checkedValue === value;
-            
+
                 return (
                     <div
                         key={`radiogroup__option--${value}`}

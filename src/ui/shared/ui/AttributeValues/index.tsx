@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { AttributeScheme } from '../../a11y';
-import { useTranslation } from '../../i18n';
+import { type AttributeScheme } from '@ui/shared/a11y';
+import { useTranslation } from '@ui/shared/i18n';
+
 import { RadioGroup, Input } from '../common';
 
 type AttributeValuesProps = AttributeScheme & {

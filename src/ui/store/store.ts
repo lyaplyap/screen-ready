@@ -1,6 +1,7 @@
 import { makeAutoObservable, runInAction, toJS } from 'mobx';
 
-import { AriaAttribute, AriaRole } from '../shared/a11y';
+import { type AriaAttribute, type AriaRole } from '../shared/a11y';
+
 import { getInitialStore } from './utils';
 
 class ScreenReadyStore {
@@ -53,7 +54,7 @@ class ScreenReadyStore {
 
     private getActiveAttributeStore() {
         const activeAttributeId = this.getActiveAttributeId();
-        
+
         if (!activeAttributeId) {
             return null;
         }

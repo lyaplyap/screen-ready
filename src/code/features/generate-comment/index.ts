@@ -1,13 +1,12 @@
-import { createTranslate, TFunc } from '@code/shared/i18n';
+import { createTranslate, type TFunc } from '@code/shared/i18n';
 import { determineNearestPosition } from '@code/shared/lib';
 
-import { ScreenReadyEventHandler as Handler, ScreenReadyEvent as Event } from '../core';
+import { type ScreenReadyEventHandler as Handler, type ScreenReadyEvent as Event } from '../core';
 
 import { createComment } from './lib/create-comment';
 import { createConnector } from './lib/create-connector';
 import { positionComment } from './lib/position-comment';
-
-import { Role } from './types';
+import { type Role } from './types';
 
 const createComments = (data: Role, frames: SceneNode[], t: TFunc) => {
     for (const frame of frames) {

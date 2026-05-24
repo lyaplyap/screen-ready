@@ -1,6 +1,6 @@
-import { KeyboardEvent } from 'react';
+import { type KeyboardEvent } from 'react';
 
-import { RadioGroupProps } from '.';
+import { type RadioGroupProps } from '.';
 
 const nonNegative = (number: number) => Math.max(number, 0);
 
@@ -68,11 +68,11 @@ export const useRadioGroup = ({ value: checkedValue, options, onChange }: RadioG
             tabIndex: isChecked || (index === 0 && !checkedValue) ? 0 : -1,
             onClick: () => onChange(value),
             onKeyDown: (event: KeyboardEvent<HTMLDivElement>) => handleRadioKeyboard(event, value)
-        }
+        };
     };
 
     return {
         getRadioGroupProps,
         getRadioProps
-    }
+    };
 };

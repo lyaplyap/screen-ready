@@ -4,7 +4,7 @@ export const hexToRgb = (hex: string) => {
     if (!result) {
         throw new Error('CANNOT_CONVERT_HEX_TO_RGB');
     }
-    
+
     return {
         r: parseInt(result[1], 16) / 255,
         g: parseInt(result[2], 16) / 255,
@@ -15,12 +15,12 @@ export const hexToRgb = (hex: string) => {
 export const parsePadding = (paddingString: string) => {
     const values = paddingString.trim().split(/\s+/);
     const numbers = values.map((value) => parseFloat(value));
-    
+
     let paddingTop: number;
     let paddingRight: number;
     let paddingBottom: number;
     let paddingLeft: number;
-    
+
     switch (numbers.length) {
         case 1:
             paddingTop = paddingRight = paddingBottom = paddingLeft = numbers[0];
@@ -46,7 +46,7 @@ export const parsePadding = (paddingString: string) => {
             paddingBottom = numbers[2] || 0;
             paddingLeft = numbers[3] || 0;
     }
-  
+
     return {
         paddingTop,
         paddingRight,

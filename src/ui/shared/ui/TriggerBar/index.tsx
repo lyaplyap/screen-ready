@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { useTranslation } from '../../i18n';
+import { useTranslation } from '@ui/shared/i18n';
+
 import { Button, Text } from '../common';
 
 import './index.css';

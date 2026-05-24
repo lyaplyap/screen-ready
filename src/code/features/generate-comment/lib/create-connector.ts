@@ -1,4 +1,4 @@
-import { Position, getAbsoluteBounds, hexToRgb } from '@code/shared/lib';
+import { type Position, getAbsoluteBounds, hexToRgb } from '@code/shared/lib';
 
 const CONNECTOR_COLOR = '#0d99ff';
 

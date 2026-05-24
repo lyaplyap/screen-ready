@@ -1,4 +1,4 @@
-import { Translations } from './types';
+import { type Translations } from './types';
 
 export const TRANSLATIONS: Translations = {
     ru: {
@@ -87,6 +87,6 @@ export const TRANSLATIONS: Translations = {
         'aria-header__action-delete': 'Delete',
         // trigger bar
         'trigger-bar__action-done': 'Done',
-        'trigger-bar__added-values': 'Selected attributes:',
+        'trigger-bar__added-values': 'Selected attributes:'
     }
 };

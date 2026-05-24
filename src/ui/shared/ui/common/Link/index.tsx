@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
 import cn from 'classnames';
+import React, { type ReactNode } from 'react';
 
 import { Text } from '../Text';
 
@@ -39,7 +39,7 @@ export const Link: React.FC<LinkProps> = ({
                     {
                         'link--underline': underline
                     }
-            )
+                )
             }
         >
             {iconLeft && <span className="link__icon">{iconLeft}</span>}

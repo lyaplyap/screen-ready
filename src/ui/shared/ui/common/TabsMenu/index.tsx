@@ -1,5 +1,5 @@
-import React, { useRef } from 'react';
 import cn from 'classnames';
+import React, { useRef } from 'react';
 
 import { useTabs, useIndicator } from './hooks';
 
@@ -18,7 +18,7 @@ export type TabsMenuProps = {
 
 export const TabsMenu: React.FC<TabsMenuProps> = ({ tabs, activeTabId, onChange }) => {
     const { getTablistProps, getTabProps } = useTabs({ tabs, activeTabId, onChange });
-    
+
     const tablistRef = useRef<HTMLDivElement | null>(null);
     const indicatorStyle = useIndicator({ tabs, activeTabId, tablistRef });
 

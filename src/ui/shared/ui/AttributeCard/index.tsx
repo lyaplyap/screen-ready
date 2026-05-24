@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { IconCheck } from '../../icons';
+import { IconCheck } from '@ui/shared/icons';
 
 import './index.css';
 
 type AttributeCardProps = {
     title: string;
     description: string;
-    onSelect: () => void; 
+    onSelect: () => void;
     isAdded: boolean;
     onFocus?: () => void;
 };

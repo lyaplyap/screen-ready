@@ -1,6 +1,6 @@
-import { KeyboardEvent, CSSProperties, RefObject, useEffect, useRef, useState } from 'react';
+import { type KeyboardEvent, type CSSProperties, type RefObject, useEffect, useRef, useState } from 'react';
 
-import { TabsMenuProps } from '.';
+import { type TabsMenuProps } from '.';
 
 export const useTabs = ({ tabs, activeTabId, onChange }: TabsMenuProps) => {
     const activeTabIndex = tabs.findIndex(({ id }) => id === activeTabId);
@@ -67,13 +67,13 @@ export const useTabs = ({ tabs, activeTabId, onChange }: TabsMenuProps) => {
             tabIndex: tabId === activeTabId ? 0 : -1,
             onClick: () => onChange(tabId),
             onKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => handleTabKeyboard(event, tabId)
-        }
+        };
     };
 
     return {
         getTablistProps,
         getTabProps
-    }
+    };
 };
 
 type UseIndicatorOptions = Pick<TabsMenuProps, 'tabs' | 'activeTabId'> & {
@@ -88,28 +88,28 @@ export const useIndicator = ({ tabs, activeTabId, tablistRef }: UseIndicatorOpti
         if (tablistRef.current) {
             const activeTabIndex = tabs.findIndex(({ id }) => id === activeTabId);
             const activeTabElement = tablistRef.current.children[activeTabIndex] as HTMLElement;
-            
+
             const previousTabIndex = tabs.findIndex(({ id }) => id === previousTabIdRef.current);
             const previousTabElement = tablistRef.current.children[previousTabIndex] as HTMLElement;
-            
+
             if (activeTabElement && previousTabElement && previousTabIdRef.current !== activeTabId) {
                 // Calculate positions for stretch animation
                 const activeLeft = activeTabElement.offsetLeft;
                 const activeWidth = activeTabElement.offsetWidth;
                 const previousLeft = previousTabElement.offsetLeft;
                 const previousWidth = previousTabElement.offsetWidth;
-                
+
                 // Determine stretch direction
                 const stretchLeft = Math.min(activeLeft, previousLeft);
                 const stretchRight = Math.max(activeLeft + activeWidth, previousLeft + previousWidth);
                 const stretchWidth = stretchRight - stretchLeft;
-                
+
                 // First phase: stretch to cover both tabs
                 setIndicatorStyle({
                     left: `${stretchLeft}px`,
                     width: `${stretchWidth}px`
                 });
-                
+
                 // Second phase: shrink to active tab
                 setTimeout(() => {
                     setIndicatorStyle({
@@ -125,10 +125,10 @@ export const useIndicator = ({ tabs, activeTabId, tablistRef }: UseIndicatorOpti
                     width: `${offsetWidth}px`
                 });
             }
-            
+
             previousTabIdRef.current = activeTabId;
         }
-    }, [activeTabId, tabs]);
+    }, [activeTabId, tabs, tablistRef]);
 
     return indicatorStyle;
 };

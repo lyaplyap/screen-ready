@@ -1,6 +1,6 @@
-import { KeyboardEvent, CSSProperties, RefObject, useEffect, useRef, useState } from 'react';
+import { type KeyboardEvent, type CSSProperties, type RefObject, useEffect, useRef, useState } from 'react';
 
-import { SegmentedControlProps } from '.';
+import { type SegmentedControlProps } from '.';
 
 export const useSegmentedControl = ({ options, activeOptionId, onChange }: SegmentedControlProps) => {
     const activeOptionIndex = options.findIndex(({ id }) => id === activeOptionId);
@@ -92,13 +92,13 @@ export const useSegmentedControl = ({ options, activeOptionId, onChange }: Segme
             tabIndex: optionId === activeOptionId ? 0 : -1,
             onClick: () => onChange(optionId),
             onKeyDown: (event: KeyboardEvent<HTMLButtonElement>) => handleOptionKeyboard(event, optionId)
-        }
+        };
     };
 
     return {
         getSegmentedControlProps,
         getOptionProps
-    }
+    };
 };
 
 type UseBackgroundOptions = Pick<SegmentedControlProps, 'options' | 'activeOptionId'> & {
@@ -113,20 +113,20 @@ export const useBackground = ({ options, activeOptionId, containerRef }: UseBack
         if (containerRef.current) {
             const activeOptionIndex = options.findIndex(({ id }) => id === activeOptionId);
             const activeOptionElement = containerRef.current.children[activeOptionIndex] as HTMLElement;
-            
+
             if (activeOptionElement) {
                 const { offsetLeft, offsetWidth, offsetHeight } = activeOptionElement;
-                
+
                 setBackgroundStyle({
                     left: `${offsetLeft}px`,
                     width: `${offsetWidth}px`,
                     height: `${offsetHeight}px`
                 });
             }
-            
+
             previousOptionIdRef.current = activeOptionId;
         }
-    }, [activeOptionId, options]);
+    }, [activeOptionId, options, containerRef]);
 
     return backgroundStyle;
 };

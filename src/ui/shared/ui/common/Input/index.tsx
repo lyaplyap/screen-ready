@@ -1,5 +1,5 @@
-import React, { ChangeEventHandler } from 'react';
 import cn from 'classnames';
+import React, { type ChangeEventHandler } from 'react';
 
 import { Text } from '../Text';
 

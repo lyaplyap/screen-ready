@@ -1,4 +1,4 @@
-import { AriaRole, RoleScheme, AriaAttribute, AttributeScheme } from '../shared/a11y';
+import { type AriaRole, type RoleScheme, type AriaAttribute, type AttributeScheme } from '../shared/a11y';
 
 export type AttributeStore = {
     id: AriaAttribute;

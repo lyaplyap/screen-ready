@@ -2,6 +2,7 @@
     "compilerOptions": {
         "target": "es2020",
         "outDir": "dist",
+        "skipLibCheck": true,
         "jsx": "react",
         "noUnusedLocals": true,
         "noUnusedParameters": true,

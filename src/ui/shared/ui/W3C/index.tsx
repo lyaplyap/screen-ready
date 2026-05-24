@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { IconShare } from '../../icons';
+import { IconShare } from '@ui/shared/icons';
+
 import { Text, Link } from '../common';
 
 import './index.css';

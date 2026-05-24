@@ -22,8 +22,9 @@ const loadFonts = () =>
     ]);
 
 export const createApp = () => {
-    let { language, plugin } = initConfig();
+    const config = initConfig();
 
+    let language = config.language;
     let hostReady = false;
     let uiReady = false;
 
@@ -44,9 +45,9 @@ export const createApp = () => {
     return {
         async start() {
             figma.showUI(__html__, {
-                width: plugin.width,
-                height: plugin.height,
-                themeColors: plugin.themeColors,
+                width: config.plugin.width,
+                height: config.plugin.height,
+                themeColors: config.plugin.themeColors,
                 visible: false
             });
 

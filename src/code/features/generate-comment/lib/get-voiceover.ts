@@ -1,7 +1,7 @@
-import { TFunc } from '@code/shared/i18n';
+import { type TFunc } from '@code/shared/i18n';
 import { extractTextFromFrame } from '@code/shared/lib';
 
-import { Attribute, Role } from '../types';
+import { type Attribute, type Role } from '../types';
 
 const getRoleLabel = (role: string, t: TFunc) => t(`role--${role}`);
 

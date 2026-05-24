@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { AriaAttribute } from '../../a11y';
-import { AttributeStore } from '../../../store';
-import { useTranslation } from '../../../shared/i18n';
-import { AttributeCard } from '../../../shared/ui';
+import { type AriaAttribute } from '@ui/shared/a11y';
+import { useTranslation } from '@ui/shared/i18n';
+import { AttributeCard } from '@ui/shared/ui';
+import { type AttributeStore } from '@ui/store';
+
 import { useKeyboardNavigation } from './hooks';
 
 import './index.css';
@@ -15,7 +16,7 @@ type AttributeListProps = {
 
 export const AttributeList: React.FC<AttributeListProps> = ({ attributes, selectAttribute }) => {
     const { t } = useTranslation();
-    
+
     const handleSelect = (index: number) => {
         const attribute = attributes[index];
 
@@ -30,9 +31,9 @@ export const AttributeList: React.FC<AttributeListProps> = ({ attributes, select
     );
 
     return (
-        <ul 
+        <ul
             ref={listRef}
-            className="attribute-list" 
+            className="attribute-list"
             aria-orientation="vertical"
             role="listbox"
         >

@@ -1,4 +1,4 @@
-import { Language } from '@code/shared/i18n';
+import { type Language } from '@code/shared/i18n';
 
 export type Context = {
     getLanguage(): Language;
@@ -14,5 +14,3 @@ export type ScreenReadyEvent<Type extends string, Payload extends object> = {
 };
 
 export type ScreenReadyEventHandler<Payload extends object> = (ctx: Context, payload: Payload) => void;
-
-

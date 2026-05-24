@@ -1,9 +1,9 @@
-import React from 'react';
 import { observer } from 'mobx-react-lite';
+import React from 'react';
 
-import { useTranslation } from '../../../shared/i18n';
-import { store } from '../../../store';
-import { TabsMenu, SegmentedControl } from '../../../shared/ui';
+import { useTranslation } from '@ui/shared/i18n';
+import { TabsMenu, SegmentedControl } from '@ui/shared/ui';
+import { store } from '@ui/store';
 
 import './index.css';
 

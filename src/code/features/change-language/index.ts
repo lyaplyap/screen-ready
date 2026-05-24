@@ -1,6 +1,6 @@
-import { Language } from '@code/shared/i18n';
+import { type Language } from '@code/shared/i18n';
 
-import { ScreenReadyEventHandler as Handler, ScreenReadyEvent as Event } from '../core';
+import { type ScreenReadyEventHandler as Handler, type ScreenReadyEvent as Event } from '../core';
 
 export type ChangeLanguagePayload = {
     language: Language;

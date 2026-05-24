@@ -1,8 +1,8 @@
-import { TFunc } from '@code/shared/i18n';
 import { createText, createCaption, createContainer, createIcon } from '@code/shared/figma-dsl';
+import { type TFunc } from '@code/shared/i18n';
 import { CODE_SVG } from '@code/shared/icons/code';
 
-import { Role } from '../types';
+import { type Role } from '../types';
 
 import { getHTMLAttributes } from './get-html';
 import { getVoiceover } from './get-voiceover';

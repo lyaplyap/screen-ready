@@ -1,4 +1,4 @@
-import { AriaAttribute, ARIA_ATTRIBUTES } from './attributes';
+import { type AriaAttribute, ARIA_ATTRIBUTES } from './attributes';
 
 export const ARIA_ROLES = {
     BUTTON: 'button',

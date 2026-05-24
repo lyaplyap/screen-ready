@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { IllustrationCursor } from '../../illustrations';
-import { useTranslation, Trans } from '../../i18n';
+import { useTranslation, Trans } from '@ui/shared/i18n';
+import { IllustrationCursor } from '@ui/shared/illustrations';
+
 import { Link } from '../common';
 
 import { SUPPORT_LINK } from './constants';
@@ -27,6 +28,7 @@ export const PlaceholderPanel: React.FC = () => {
                     components={
                         [
                             <Link
+                                key="support"
                                 size="xs"
                                 underline={false}
                                 href={SUPPORT_LINK}

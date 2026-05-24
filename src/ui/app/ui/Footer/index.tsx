@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { IconGithub } from '../../../shared/icons';
-import { Trans } from '../../../shared/i18n';
-import { Link } from '../../../shared/ui';
+import { Trans } from '@ui/shared/i18n';
+import { IconGithub } from '@ui/shared/icons';
+import { Link } from '@ui/shared/ui';
 
 import { PROJECT_LINK, DESIGN_LINK, DEV_LINK } from './constants';
 
@@ -18,11 +18,11 @@ export const Footer: React.FC = () => {
                 <Trans
                     i18nKey="footer__made-by"
                     components={[
-                        <Link size="xs" type="secondary" href={DEV_LINK} target="_blank" />,
-                        <Link size="xs" type="secondary" href={DESIGN_LINK} target="_blank" />
+                        <Link size="xs" type="secondary" key="dev" href={DEV_LINK} target="_blank" />,
+                        <Link size="xs" type="secondary" key="design" href={DESIGN_LINK} target="_blank" />
                     ]}
                 />
             </span>
         </footer>
-    )
+    );
 };

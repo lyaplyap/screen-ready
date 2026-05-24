@@ -1,12 +1,13 @@
-import { ARIA_ROLES_SCHEMES, ARIA_ATTRIBUTES_SCHEMES, AriaAttribute, AttributeScheme, RoleScheme } from '../shared/a11y';
-import { Store, RoleStore, AttributeStore } from './types';
+import { ARIA_ROLES_SCHEMES, ARIA_ATTRIBUTES_SCHEMES, type AriaAttribute, type AttributeScheme, type RoleScheme } from '../shared/a11y';
+
+import { type Store, type RoleStore, type AttributeStore } from './types';
 
 const getDefaultAttributeStore = (scheme: AttributeScheme): AttributeStore => {
     const { id, type } = scheme;
 
     if (type === 'boolean' || type === 'enum') {
         return {
-            id: id,
+            id,
             scheme,
             pickedValue: scheme.defaultValue,
             isAdded: false
@@ -23,7 +24,7 @@ const getDefaultAttributeStore = (scheme: AttributeScheme): AttributeStore => {
 
 const getDefaultRoleStore = (scheme: RoleScheme): RoleStore => {
     const { id, attributes } = scheme;
-    
+
     return {
         id,
         scheme,

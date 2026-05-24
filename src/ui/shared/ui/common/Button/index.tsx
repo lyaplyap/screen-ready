@@ -1,5 +1,5 @@
-import React, { ReactNode, MouseEventHandler } from 'react';
 import cn from 'classnames';
+import React, { type ReactNode, type MouseEventHandler } from 'react';
 
 import { Text } from '../Text';
 

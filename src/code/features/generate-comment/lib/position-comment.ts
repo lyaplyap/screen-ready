@@ -1,4 +1,4 @@
-import { Position, getAbsoluteBounds, getTopLevelFrameBounds } from '@code/shared/lib';
+import { type Position, getAbsoluteBounds, getTopLevelFrameBounds } from '@code/shared/lib';
 
 const COMMENT_MARGIN = 32;
 

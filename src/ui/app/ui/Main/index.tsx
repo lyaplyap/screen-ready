@@ -1,8 +1,8 @@
-import React from 'react';
 import { observer } from 'mobx-react-lite';
+import React from 'react';
 
-import { store } from '../../../store';
-import { AttributeList, AttributePanel, PlaceholderPanel, TriggerBar } from '../../../shared/ui';
+import { AttributeList, AttributePanel, PlaceholderPanel, TriggerBar } from '@ui/shared/ui';
+import { store } from '@ui/store';
 
 import './index.css';
 
