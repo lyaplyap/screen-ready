@@ -4,7 +4,7 @@ import { type RadioGroupProps } from '.';
 
 const nonNegative = (number: number) => Math.max(number, 0);
 
-export const useRadioGroup = ({ value: checkedValue, options, onChange }: RadioGroupProps) => {
+export const useRadioGroup = ({ value: checkedValue, options, onChange, onDoubleClick }: RadioGroupProps) => {
     const checkedOptionIndex = nonNegative(options.findIndex(({ value }) => value === checkedValue));
 
     const handleRadioGroupKeyboard = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -67,6 +67,7 @@ export const useRadioGroup = ({ value: checkedValue, options, onChange }: RadioG
             'aria-checked': isChecked,
             tabIndex: isChecked || (index === 0 && !checkedValue) ? 0 : -1,
             onClick: () => onChange(value),
+            onDoubleClick: () => onDoubleClick?.(value),
             onKeyDown: (event: KeyboardEvent<HTMLDivElement>) => handleRadioKeyboard(event, value)
         };
     };

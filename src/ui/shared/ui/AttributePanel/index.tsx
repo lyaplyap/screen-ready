@@ -36,7 +36,12 @@ export const AttributePanel: React.FC<AttributePanelProps> = ({
                     onAdd={addAttribute}
                     onRemove={removeAttribute}
                 />
-                <AttributeValues {...attribute} value={pickedValue} onPick={pickAttributeValue} />
+                <AttributeValues
+                    {...attribute}
+                    value={pickedValue}
+                    onPick={pickAttributeValue}
+                    onAdd={isAdded ? undefined : addAttribute}
+                />
                 <W3C description={t(`w3c__description--${id}`)} link={w3c} />
             </div>
             <div className="attribute-panel__preview"></div>

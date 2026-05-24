@@ -8,9 +8,10 @@ import { RadioGroup, Input } from '../common';
 type AttributeValuesProps = AttributeScheme & {
     value?: string;
     onPick: (value: string) => void;
+    onAdd?: () => void;
 };
 
-export const AttributeValues: React.FC<AttributeValuesProps> = ({ value, onPick, ...attribute }) => {
+export const AttributeValues: React.FC<AttributeValuesProps> = ({ value, onPick, onAdd, ...attribute }) => {
     const { t } = useTranslation();
     const { type } = attribute;
 
@@ -21,6 +22,10 @@ export const AttributeValues: React.FC<AttributeValuesProps> = ({ value, onPick,
             <RadioGroup
                 value={value}
                 onChange={onPick}
+                onDoubleClick={(pickedValue) => {
+                    onPick(pickedValue);
+                    onAdd?.();
+                }}
                 options={values.map((value: string) => ({ value, label: value }))}
             />
         );

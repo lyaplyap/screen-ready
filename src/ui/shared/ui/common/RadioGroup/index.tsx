@@ -15,6 +15,7 @@ type Option = {
 export type RadioGroupProps = {
     value?: string;
     onChange: (value: string) => void;
+    onDoubleClick?: (value: string) => void;
     options: Option[];
 };
 
