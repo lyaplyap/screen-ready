@@ -1,26 +1,26 @@
 export const extractTextFromFrame = (frame: SceneNode) => {
     const textContents: string[] = [];
-    
+
     const traverseNode = (node: SceneNode) => {
         if (node.type === 'TEXT') {
             if (node.characters && node.characters.trim()) {
                 textContents.push(node.characters.trim());
             }
         }
-        
+
         if ('children' in node) {
             for (const child of node.children) {
                 traverseNode(child);
             }
         }
     };
-    
+
     traverseNode(frame);
 
     if (!textContents.length) {
         return undefined;
     }
-    
+
     return textContents.join(', ');
 };
 
@@ -31,11 +31,11 @@ export const findTopLevelFrame = (node: SceneNode): SceneNode | null => {
         current = current.parent as SceneNode;
     }
 
-    if (current.parent && current.parent.type === 'PAGE' && 
+    if (current.parent && current.parent.type === 'PAGE' &&
         (current.type === 'FRAME' || current.type === 'COMPONENT' || current.type === 'INSTANCE')) {
         return current;
     }
-    
+
     return null;
 };
 
@@ -48,7 +48,7 @@ type FrameBounds = {
 
 export const getTopLevelFrameBounds = (targetFrame: SceneNode): FrameBounds => {
     const topLevelFrame = findTopLevelFrame(targetFrame);
-    
+
     if (!topLevelFrame) {
         return {
             x: targetFrame.x,
@@ -57,7 +57,7 @@ export const getTopLevelFrameBounds = (targetFrame: SceneNode): FrameBounds => {
             height: targetFrame.height
         };
     }
-    
+
     return {
         x: topLevelFrame.x,
         y: topLevelFrame.y,
@@ -74,7 +74,7 @@ export const getAbsoluteBounds = (targetFrame: SceneNode): FrameBounds => {
 
     while (current.parent && current.parent.type !== 'PAGE') {
         const parent = current.parent as SceneNode;
-        
+
         x += parent.x;
         y += parent.y;
 
@@ -86,7 +86,7 @@ export const getAbsoluteBounds = (targetFrame: SceneNode): FrameBounds => {
         y,
         width: targetFrame.width,
         height: targetFrame.height
-    }
+    };
 };
 
 export type Position = 'top' | 'bottom' | 'left' | 'right';
@@ -99,14 +99,14 @@ export const determineNearestPosition = (frame: SceneNode): Position => {
         x: frameBounds.x + frameBounds.width / 2,
         y: frameBounds.y + frameBounds.height / 2
     };
-    
+
     const distanceToLeft = frameCenter.x - topLevelFrameBounds.x;
     const distanceToRight = (topLevelFrameBounds.x + topLevelFrameBounds.width) - frameCenter.x;
     const distanceToTop = frameCenter.y - topLevelFrameBounds.y;
     const distanceToBottom = (topLevelFrameBounds.y + topLevelFrameBounds.height) - frameCenter.y;
-    
+
     const minDistance = Math.min(distanceToLeft, distanceToRight, distanceToTop, distanceToBottom);
-    
+
     if (minDistance === distanceToLeft) {
         return 'left';
     } else if (minDistance === distanceToRight) {

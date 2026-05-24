@@ -1,44 +1,78 @@
-import { PLUGIN_WIDTH, PLUGIN_HEIGHT, MESSAGE_TYPES } from '../constants';
-import { Message, ChangeLanguageMessageData, GenerateCommentMessageData } from '../types';
-import { Language } from '../i18n';
+import {
+    type Context as AppContext,
+    type ChangeLanguageEvent,
+    changeLanguageHandler,
+    type UIReadyEvent,
+    uiReadyHandler,
+    type GenerateCommentEvent,
+    generateCommentHandler
+} from '@code/features';
 
-import { generateCommentHandler } from './generate-comment';
+import { initConfig } from './config';
 
-class App {
-    private language: Language = 'en';
+type ScreenReadyEvent =
+    | ChangeLanguageEvent
+    | UIReadyEvent
+    | GenerateCommentEvent;
 
-    constructor() {
-        figma.loadFontAsync({ family: 'Inter', style: 'Regular' });
-        figma.loadFontAsync({ family: 'Inter', style: 'Bold' });
-    }
+const loadFonts = () =>
+    Promise.all([
+        figma.loadFontAsync({ family: 'Inter', style: 'Regular' }),
+        figma.loadFontAsync({ family: 'Inter', style: 'Bold' })
+    ]);
 
-    private changeLanguage(data: ChangeLanguageMessageData) {
-        this.language = data.language;
-    }
+export const createApp = () => {
+    let { language, plugin } = initConfig();
 
-    private getLanguage() {
-        return this.language;
-    }
+    let hostReady = false;
+    let uiReady = false;
 
-    private generateComment(data: GenerateCommentMessageData) {
-        const language = this.getLanguage();
+    const showIfReady = () => {
+        if (hostReady && uiReady) {
+            figma.ui.show();
+        }
+    };
 
-        generateCommentHandler(data, language);
-    }
+    const ctx: AppContext = {
+        getLanguage: () => language,
+        setLanguage: (next) => { language = next; },
+        markUIReady: () => { uiReady = true; showIfReady(); },
+        closeUI: figma.closePlugin,
+        notify: figma.notify
+    };
 
-    start() {
-        figma.showUI(__html__, { width: PLUGIN_WIDTH, height: PLUGIN_HEIGHT, themeColors: true });
+    return {
+        async start() {
+            figma.showUI(__html__, {
+                width: plugin.width,
+                height: plugin.height,
+                themeColors: plugin.themeColors,
+                visible: false
+            });
 
-        figma.ui.onmessage = async (message: Message) => {
-            if (message.type === MESSAGE_TYPES.CHANGE_LANGUAGE) {
-                this.changeLanguage(message.data);
-            }
-        
-            if (message.type === MESSAGE_TYPES.GENERATE_COMMENT) {
-                this.generateComment(message.data);
-            }
-        };
-    }
-}
+            figma.ui.onmessage = (event: ScreenReadyEvent) => {
+                if (!event.type.startsWith('screen-ready')) {
+                    return;
+                }
 
-export const app = new App();
+                switch(event.type) {
+                    case 'screen-ready:change-language':
+                        changeLanguageHandler(ctx, event.payload);
+                        break;
+                    case 'screen-ready:ui-ready':
+                        uiReadyHandler(ctx, event.payload);
+                        break;
+                    case 'screen-ready:generate-comment':
+                        generateCommentHandler(ctx, event.payload);
+                        break;
+                    default:
+                        throw new Error('EVENT_NOT_FOUND');
+                }
+            };
+
+            await loadFonts();
+            hostReady = true;
+            showIfReady();
+        }
+    };
+};

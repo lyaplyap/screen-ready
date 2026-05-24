@@ -16,7 +16,7 @@ export const createIcon = (content: string, styles: IconStyles = {}) => {
     iconFrame.fills = [];
     iconFrame.clipsContent = false;
 
-    const svgNode = figma.createNodeFromSvg(content);        
+    const svgNode = figma.createNodeFromSvg(content);
     const scaleFactor = size / Math.max(svgNode.width, svgNode.height);
 
     svgNode.resize(svgNode.width * scaleFactor, svgNode.height * scaleFactor);
@@ -40,19 +40,18 @@ export const createIcon = (content: string, styles: IconStyles = {}) => {
                 opacity
             }];
         }
-        
+
         if ('children' in node) {
             node.children.forEach((child) => applyColorToChildren(child));
         }
     }
 
     applyColorToChildren(svgNode);
-    
+
     iconFrame.appendChild(svgNode);
-    
+
     svgNode.x = (size - svgNode.width) / 2;
     svgNode.y = (size - svgNode.height) / 2;
-    
-    return iconFrame;
-}
 
+    return iconFrame;
+};

@@ -1,7 +1,7 @@
-import { Attribute, GenerateCommentMessageData as MessageData } from '../types';
-import { TFunc } from '../i18n';
+import { TFunc } from '@code/shared/i18n';
+import { extractTextFromFrame } from '@code/shared/lib';
 
-import { extractTextFromFrame } from './figma';
+import { Attribute, Role } from '../types';
 
 const getRoleLabel = (role: string, t: TFunc) => t(`role--${role}`);
 
@@ -35,7 +35,7 @@ const getNameLabel = (attributes: Attribute[], frame: SceneNode) => {
     return nativeName;
 };
 
-export const getVoiceover = ({ role, attributes }: MessageData, frame: SceneNode, t: TFunc) => {
+export const getVoiceover = ({ role, attributes }: Role, frame: SceneNode, t: TFunc) => {
     const nameLabel = getNameLabel(attributes, frame);
     const roleLabel = getRoleLabel(role, t);
     const statesLabel = getStatesLabel(attributes, t);

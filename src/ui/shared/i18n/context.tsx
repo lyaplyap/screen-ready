@@ -1,7 +1,7 @@
-import React, { createContext, useContext, ReactNode, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, ReactNode, useState, useEffect, useCallback, useRef } from 'react';
 
 import { TRANSLATIONS } from './translations';
-import { onChangeLanguage } from './utils';
+import { onChangeLanguage, onUiReady } from './utils';
 
 type I18nContextType = {
     t: (key: string) => string;
@@ -18,6 +18,7 @@ type I18nProviderProps = {
 
 export const I18nProvider: React.FC<I18nProviderProps> = ({ children, defaultLanguage = 'ru' }) => {
     const [currentLanguage, setCurrentLanguage] = useState(defaultLanguage);
+    const hasMounted = useRef(false);
 
     const changeLanguage = useCallback(
         (lang: string) => {
@@ -31,11 +32,11 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({ children, defaultLan
     const t = useCallback(
         (key: string): string => {
             const dictionary = TRANSLATIONS[currentLanguage];
-            
+
             if (!dictionary) {
                 return key;
             }
-            
+
             return dictionary[key] || key;
         },
         [currentLanguage]
@@ -43,7 +44,13 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({ children, defaultLan
 
     useEffect(() => {
         document.documentElement.lang = currentLanguage;
-        onChangeLanguage(currentLanguage);
+
+        if (hasMounted.current) {
+            onChangeLanguage(currentLanguage);
+        } else {
+            hasMounted.current = true;
+            onUiReady(currentLanguage);
+        }
     }, [currentLanguage]);
 
     return (

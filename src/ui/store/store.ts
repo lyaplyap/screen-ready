@@ -150,8 +150,8 @@ class ScreenReadyStore {
         const attributes = this.getAddedAttributes();
 
         const pluginMessage = {
-            type: 'generate-comment',
-            data: {
+            type: 'screen-ready:generate-comment',
+            payload: {
                 role: toJS(role),
                 attributes: toJS(attributes)
             }

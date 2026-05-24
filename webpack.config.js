@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const path = require('path');
 
 module.exports = (env, argv) => ({
@@ -16,7 +17,10 @@ module.exports = (env, argv) => ({
             { test: /\.(png|jpg|gif|webp|svg)$/, loader: 'url-loader' },
         ],
     },
-    resolve: { extensions: ['.tsx', '.ts', '.jsx', '.js'] },
+    resolve: {
+        extensions: ['.tsx', '.ts', '.jsx', '.js'],
+        plugins: [new TsconfigPathsPlugin()],
+    },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),

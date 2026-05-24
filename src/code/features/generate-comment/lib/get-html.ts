@@ -1,6 +1,6 @@
-import { GenerateCommentMessageData as MessageData } from '../types';
+import { Role } from '../types';
 
-export const getHTMLAttributes = ({ role, attributes }: MessageData) => {
+export const getHTMLAttributes = ({ role, attributes }: Role) => {
     const htmlAttributes: string[] = [];
 
     htmlAttributes.push(`role="${role}"`);

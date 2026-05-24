@@ -11,6 +11,11 @@
         "noImplicitAny": false,
         "strictNullChecks": true,
         "moduleResolution": "node",
-        "typeRoots": ["./node_modules/@types", "./node_modules/@figma"]
+        "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
+        "baseUrl": ".",
+        "paths": {
+            "@code/*": ["src/code/*"],
+            "@ui/*": ["src/ui/*"]
+        }
     }
 }
