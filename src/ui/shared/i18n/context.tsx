@@ -1,7 +1,8 @@
 import React, { createContext, useContext, type ReactNode, useState, useEffect, useCallback, useRef } from 'react';
 
+import { onChangeLanguage, onUIReady } from '@ui/shared/lib/plugin-messages';
+
 import { TRANSLATIONS } from './translations';
-import { onChangeLanguage, onUiReady } from './utils';
 
 type I18nContextType = {
     t: (key: string) => string;
@@ -49,7 +50,7 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({ children, defaultLan
             onChangeLanguage(currentLanguage);
         } else {
             hasMounted.current = true;
-            onUiReady(currentLanguage);
+            onUIReady(currentLanguage);
         }
     }, [currentLanguage]);
 

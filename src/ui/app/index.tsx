@@ -1,11 +1,14 @@
 import React from 'react';
 
-import { I18nProvider } from '../shared/i18n';
+import { I18nProvider } from '@ui/shared/i18n';
+import { Footer, Header, Main } from '@ui/widgets';
 
-import { Header, Main, Footer } from './ui';
+import { initStore } from './store';
 
 import './styles/reset.css';
 import './styles/main.css';
+
+initStore();
 
 export const App: React.FC = () => {
     return (
