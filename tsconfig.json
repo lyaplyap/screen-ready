@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "target": "es2020",
+        "module": "esnext",
         "outDir": "dist",
         "skipLibCheck": true,
         "jsx": "react",
@@ -11,12 +12,13 @@
         "removeComments": true,
         "noImplicitAny": false,
         "strictNullChecks": true,
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "typeRoots": ["./node_modules/@types", "./node_modules/@figma"],
         "baseUrl": ".",
         "paths": {
             "@code/*": ["src/code/*"],
             "@ui/*": ["src/ui/*"]
         }
-    }
+    },
+    "exclude": ["node_modules", "dist"]
 }
