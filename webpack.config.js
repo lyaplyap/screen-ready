@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const path = require('path');
@@ -14,7 +15,7 @@ module.exports = (env, argv) => ({
         rules: [
             { test: /\.tsx?$/, use: 'ts-loader', exclude: /node_modules/ },
             { test: /\.css$/, use: ['style-loader', { loader: 'css-loader' }] },
-            { test: /\.(png|jpg|gif|webp|svg)$/, loader: 'url-loader' },
+            { test: /\.(png|jpg|gif|webp|svg)$/, type: 'asset/inline' },
         ],
     },
     resolve: {
@@ -25,6 +26,12 @@ module.exports = (env, argv) => ({
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
     },
+    performance: {
+        hints: argv.mode === 'production' ? 'warning' : false,
+        maxAssetSize: 400 * 1024,
+        maxEntrypointSize: 400 * 1024,
+        assetFilter: (name) => name.endsWith('.js'),
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/ui/index.html',
@@ -32,6 +39,7 @@ module.exports = (env, argv) => ({
             chunks: ['ui'],
             cache: false,
         }),
-        new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/ui/])
-    ]
+        new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/ui/]),
+        process.env.ANALYZE && new BundleAnalyzerPlugin(),
+    ].filter(Boolean)
 });
