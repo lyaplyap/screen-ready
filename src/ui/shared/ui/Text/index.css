@@ -11,6 +11,10 @@
     color: var(--figma-color-text-secondary);
 }
 
+.typography--color_brand {
+    color: var(--figma-color-text-brand);
+}
+
 .typography--type_title-xl {
     font-size: 32px;
     font-weight: 600;

@@ -26,6 +26,11 @@ module.exports = (env, argv) => ({
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
     },
+    watchOptions: {
+        ignored: /node_modules|\.git|dist|storybook-static|coverage/,
+        aggregateTimeout: 300,
+        poll: 1000,
+    },
     performance: {
         hints: argv.mode === 'production' ? 'warning' : false,
         maxAssetSize: 400 * 1024,

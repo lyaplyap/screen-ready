@@ -1,14 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import React from 'react';
 
-import { IconCheck, IconGithub, IconPlus, IconShare, IconTrashBin } from './index';
+import { IconCheck, IconGithub, IconLightbulb, IconPlus, IconShare, IconTrashBin, IconVolume } from './index';
 
 const ICONS = {
     IconCheck,
     IconGithub,
+    IconLightbulb,
     IconPlus,
     IconShare,
-    IconTrashBin
+    IconTrashBin,
+    IconVolume
 } as const;
 
 type IconName = keyof typeof ICONS;

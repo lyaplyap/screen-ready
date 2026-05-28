@@ -1,0 +1,32 @@
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.paragraph__title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 0;
+    color: var(--figma-color-text-primary);
+}
+
+.paragraph__title-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: var(--figma-color-text-secondary);
+}
+
+.paragraph__text-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.paragraph__text-block {
+    margin: 0;
+}
