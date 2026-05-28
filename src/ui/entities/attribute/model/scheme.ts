@@ -15,6 +15,7 @@ type BaseAttributeScheme = {
     htmlAlternative?: string;
     w3c: string;
     advice?: string[];
+    warning?: string[];
 };
 
 export type BooleanAttributeScheme = BaseAttributeScheme & {
@@ -59,7 +60,8 @@ export const ARIA_ATTRIBUTES_SCHEMES: Record<AriaAttribute, AttributeScheme> = {
         values: ['false', 'menu', 'listbox', 'tree', 'grid', 'dialog'],
         defaultValue: 'false',
         w3c: 'https://www.w3.org/TR/wai-aria-1.2/#aria-haspopup',
-        advice: ['not-for-tooltips-or-nav', 'pair-with-expanded']
+        advice: ['not-for-tooltips-or-nav', 'pair-with-expanded'],
+        warning: ['match-role-and-interactive']
     },
     [ARIA_ATTRIBUTES.EXPANDED]: {
         id: 'aria-expanded',
@@ -67,7 +69,8 @@ export const ARIA_ATTRIBUTES_SCHEMES: Record<AriaAttribute, AttributeScheme> = {
         values: ['false', 'true'],
         defaultValue: undefined,
         w3c: 'https://www.w3.org/TR/wai-aria-1.2/#aria-expanded',
-        advice: ['only-on-trigger', 'sync-with-state']
+        advice: ['only-on-trigger'],
+        warning: ['sync-with-state']
     },
     [ARIA_ATTRIBUTES.PRESSED]: {
         id: 'aria-pressed',

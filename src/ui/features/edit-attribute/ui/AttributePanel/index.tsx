@@ -8,6 +8,7 @@ import { Advice } from '../Advice';
 import { AriaHeader } from '../AriaHeader';
 import { AttributeValues } from '../AttributeValues';
 import { VoiceOver } from '../VoiceOver';
+import { Warning } from '../Warning';
 
 import './index.css';
 
@@ -54,7 +55,7 @@ export const AttributePanel: React.FC<AttributePanelProps> = ({
             <div className="attribute-panel__preview"></div>
             <VoiceOver role={role} scheme={attribute} pickedValue={pickedValue} />
             <Advice scheme={attribute} />
-            <div className="attribute-panel__informer"></div>
+            <Warning scheme={attribute} />
         </div>
     );
 };

@@ -82,7 +82,6 @@ export const TRANSLATIONS: Translations = {
         'advice--still-focusable': 'В отличие от disabled, элемент с aria-disabled остаётся <0>в фокусе</0> и читается скринридером',
         // advice — aria-expanded
         'advice--only-on-trigger': 'Ставьте атрибут на <0>триггер</0>, который раскрывает контент, а не на сам раскрываемый контейнер',
-        'advice--sync-with-state': 'Значение должно <0>меняться</0> вместе с фактическим состоянием — иначе скринридер озвучит неверно',
         // advice — aria-pressed
         'advice--toggle-only': 'Используйте только для кнопок-<0>переключателей</0> (toggle), у которых есть два или три устойчивых состояния',
         'advice--not-for-button-link': 'Не используйте на обычных кнопках и ссылках — у них нет состояния «нажато»',
@@ -93,7 +92,11 @@ export const TRANSLATIONS: Translations = {
         'advice--only-with-heading-role': 'Применяйте только вместе с <0>role="heading"</0> — на нативных h1–h6 уровень уже задан тегом',
         // advice — aria-checked
         'advice--only-with-checkbox-radio': 'Используйте на элементах с ролью <0>checkbox</0>, <0>radio</0> или <0>switch</0> — нативные input их уже описывают',
-        'advice--mixed-for-tristate': 'Значение <0>mixed</0> подходит только для tri-state чекбоксов (например, «выделить всё»)'
+        'advice--mixed-for-tristate': 'Значение <0>mixed</0> подходит только для tri-state чекбоксов (например, «выделить всё»)',
+        // warning — aria-haspopup
+        'warning--match-role-and-interactive': 'Важно, чтобы значение aria-haspopup совпадало с ролью попапа, и чтобы элемент, который открывает попап, обязательно был интерактивным',
+        // warning — aria-expanded
+        'warning--sync-with-state': 'Значение aria-expanded обязательно должно меняться вместе с реальным состоянием элемента — иначе скринридер озвучит неверное состояние'
     },
     en: {
         // common
@@ -176,7 +179,6 @@ export const TRANSLATIONS: Translations = {
         'advice--still-focusable': 'Unlike disabled, an aria-disabled element remains <0>focusable</0> and is announced by screen readers',
         // advice — aria-expanded
         'advice--only-on-trigger': 'Put the attribute on the <0>trigger</0> that expands the content, not on the container itself',
-        'advice--sync-with-state': 'The value must <0>change</0> together with the actual state, otherwise the screen reader will announce the wrong state',
         // advice — aria-pressed
         'advice--toggle-only': 'Use only for <0>toggle</0> buttons that have two or three stable states',
         'advice--not-for-button-link': 'Do not use on regular buttons or links — they have no "pressed" state',
@@ -187,6 +189,10 @@ export const TRANSLATIONS: Translations = {
         'advice--only-with-heading-role': 'Use only together with <0>role="heading"</0> — native h1–h6 already encode the level via the tag',
         // advice — aria-checked
         'advice--only-with-checkbox-radio': 'Use on elements with role <0>checkbox</0>, <0>radio</0>, or <0>switch</0> — native inputs already expose this',
-        'advice--mixed-for-tristate': 'The <0>mixed</0> value only fits tri-state checkboxes (e.g. "select all")'
+        'advice--mixed-for-tristate': 'The <0>mixed</0> value only fits tri-state checkboxes (e.g. "select all")',
+        // warning — aria-haspopup
+        'warning--match-role-and-interactive': 'The aria-haspopup value must match the popup\'s role, and the element opening the popup must be interactive',
+        // warning — aria-expanded
+        'warning--sync-with-state': 'The aria-expanded value must change together with the actual element state, otherwise the screen reader will announce the wrong state'
     }
 };

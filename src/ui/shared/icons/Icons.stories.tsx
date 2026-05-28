@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import React from 'react';
 
-import { IconCheck, IconGithub, IconLightbulb, IconPlus, IconShare, IconTrashBin, IconVolume } from './index';
+import { IconCheck, IconError, IconGithub, IconLightbulb, IconPlus, IconShare, IconTrashBin, IconVolume } from './index';
 
 const ICONS = {
     IconCheck,
+    IconError,
     IconGithub,
     IconLightbulb,
     IconPlus,

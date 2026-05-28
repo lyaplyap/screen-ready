@@ -1,0 +1,36 @@
+.informer {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.informer__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+}
+
+.informer.informer--severity_warning {
+    color: #E6E5E7;
+    background-color: #422B2B;
+}
+
+.informer--severity_warning .informer__icon {
+    color: #D1A7A7;
+}
+
+.informer__text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.informer__text-block {
+    margin: 0;
+}

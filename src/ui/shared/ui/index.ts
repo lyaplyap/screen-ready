@@ -1,4 +1,5 @@
 export * from './Button';
+export * from './Informer';
 export * from './Input';
 export * from './Link';
 export * from './Paragraph';

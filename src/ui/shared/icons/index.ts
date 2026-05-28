@@ -1,4 +1,5 @@
 export { IconCheck } from './IconCheck';
+export { IconError } from './IconError';
 export { IconGithub } from './IconGithub';
 export { IconLightbulb } from './IconLightbulb';
 export { IconPlus } from './IconPlus';
