@@ -4,6 +4,7 @@ import { type AttributeScheme, W3C } from '@ui/entities/attribute';
 import { type AriaRole } from '@ui/entities/role';
 import { useTranslation } from '@ui/shared/i18n';
 
+import { Advice } from '../Advice';
 import { AriaHeader } from '../AriaHeader';
 import { AttributeValues } from '../AttributeValues';
 import { VoiceOver } from '../VoiceOver';
@@ -52,7 +53,7 @@ export const AttributePanel: React.FC<AttributePanelProps> = ({
             </div>
             <div className="attribute-panel__preview"></div>
             <VoiceOver role={role} scheme={attribute} pickedValue={pickedValue} />
-            <div className="attribute-panel__advise"></div>
+            <Advice scheme={attribute} />
             <div className="attribute-panel__informer"></div>
         </div>
     );

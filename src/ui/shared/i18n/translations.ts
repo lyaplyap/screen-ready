@@ -71,7 +71,29 @@ export const TRANSLATIONS: Translations = {
         'voiceover-aria-level': 'уровень',
         'voiceover-aria-checked--true': 'отмечено',
         'voiceover-aria-checked--false': 'не отмечено',
-        'voiceover-aria-checked--mixed': 'частично отмечено'
+        'voiceover-aria-checked--mixed': 'частично отмечено',
+        // advice — UI block
+        'advice__title': 'Совет',
+        // advice — aria-haspopup
+        'advice--not-for-tooltips-or-nav': 'Не используйте этот атрибут для <0>тултипов (role="tooltip")</0> и простой <0>навигации</0> по сайту со ссылками на другие страницы',
+        'advice--pair-with-expanded': 'Если подразумевается раскрытие и скрытие каких либо элементов, то используйте кроме aria-haspopup aria-expanded',
+        // advice — aria-disabled
+        'advice--prefer-html-disabled': 'Если у элемента есть нативный атрибут <0>disabled</0> (button, input), предпочтительно использовать его',
+        'advice--still-focusable': 'В отличие от disabled, элемент с aria-disabled остаётся <0>в фокусе</0> и читается скринридером',
+        // advice — aria-expanded
+        'advice--only-on-trigger': 'Ставьте атрибут на <0>триггер</0>, который раскрывает контент, а не на сам раскрываемый контейнер',
+        'advice--sync-with-state': 'Значение должно <0>меняться</0> вместе с фактическим состоянием — иначе скринридер озвучит неверно',
+        // advice — aria-pressed
+        'advice--toggle-only': 'Используйте только для кнопок-<0>переключателей</0> (toggle), у которых есть два или три устойчивых состояния',
+        'advice--not-for-button-link': 'Не используйте на обычных кнопках и ссылках — у них нет состояния «нажато»',
+        // advice — aria-label
+        'advice--only-when-no-visible-text': 'Добавляйте только когда у элемента <0>нет видимого текста</0> (иконочная кнопка, аватар)',
+        'advice--avoid-duplication': 'Не дублируйте видимый текст — скринридер озвучит элемент дважды',
+        // advice — aria-level
+        'advice--only-with-heading-role': 'Применяйте только вместе с <0>role="heading"</0> — на нативных h1–h6 уровень уже задан тегом',
+        // advice — aria-checked
+        'advice--only-with-checkbox-radio': 'Используйте на элементах с ролью <0>checkbox</0>, <0>radio</0> или <0>switch</0> — нативные input их уже описывают',
+        'advice--mixed-for-tristate': 'Значение <0>mixed</0> подходит только для tri-state чекбоксов (например, «выделить всё»)'
     },
     en: {
         // common
@@ -143,6 +165,28 @@ export const TRANSLATIONS: Translations = {
         'voiceover-aria-level': 'level',
         'voiceover-aria-checked--true': 'checked',
         'voiceover-aria-checked--false': 'not checked',
-        'voiceover-aria-checked--mixed': 'partially checked'
+        'voiceover-aria-checked--mixed': 'partially checked',
+        // advice — UI block
+        'advice__title': 'Hint',
+        // advice — aria-haspopup
+        'advice--not-for-tooltips-or-nav': 'Do not use this attribute for <0>tooltips (role="tooltip")</0> or simple <0>navigation</0> across pages',
+        'advice--pair-with-expanded': 'If you also show/hide the popup, pair aria-haspopup with aria-expanded',
+        // advice — aria-disabled
+        'advice--prefer-html-disabled': 'If the element has a native <0>disabled</0> attribute (button, input), prefer it',
+        'advice--still-focusable': 'Unlike disabled, an aria-disabled element remains <0>focusable</0> and is announced by screen readers',
+        // advice — aria-expanded
+        'advice--only-on-trigger': 'Put the attribute on the <0>trigger</0> that expands the content, not on the container itself',
+        'advice--sync-with-state': 'The value must <0>change</0> together with the actual state, otherwise the screen reader will announce the wrong state',
+        // advice — aria-pressed
+        'advice--toggle-only': 'Use only for <0>toggle</0> buttons that have two or three stable states',
+        'advice--not-for-button-link': 'Do not use on regular buttons or links — they have no "pressed" state',
+        // advice — aria-label
+        'advice--only-when-no-visible-text': 'Add only when the element has <0>no visible label</0> (icon button, avatar)',
+        'advice--avoid-duplication': 'Do not duplicate the visible text — the screen reader will announce the element twice',
+        // advice — aria-level
+        'advice--only-with-heading-role': 'Use only together with <0>role="heading"</0> — native h1–h6 already encode the level via the tag',
+        // advice — aria-checked
+        'advice--only-with-checkbox-radio': 'Use on elements with role <0>checkbox</0>, <0>radio</0>, or <0>switch</0> — native inputs already expose this',
+        'advice--mixed-for-tristate': 'The <0>mixed</0> value only fits tri-state checkboxes (e.g. "select all")'
     }
 };
