@@ -1,14 +1,17 @@
 import React from 'react';
 
 import { type AttributeScheme, W3C } from '@ui/entities/attribute';
+import { type AriaRole } from '@ui/entities/role';
 import { useTranslation } from '@ui/shared/i18n';
 
 import { AriaHeader } from '../AriaHeader';
 import { AttributeValues } from '../AttributeValues';
+import { VoiceOver } from '../VoiceOver';
 
 import './index.css';
 
 type AttributePanelProps = {
+    role: AriaRole;
     scheme: AttributeScheme;
     pickedValue?: string;
     isAdded: boolean;
@@ -18,6 +21,7 @@ type AttributePanelProps = {
 };
 
 export const AttributePanel: React.FC<AttributePanelProps> = ({
+    role,
     scheme: attribute,
     pickedValue,
     isAdded,
@@ -47,7 +51,7 @@ export const AttributePanel: React.FC<AttributePanelProps> = ({
                 <W3C description={t(`w3c__description--${id}`)} link={w3c} />
             </div>
             <div className="attribute-panel__preview"></div>
-            <div className="attribute-panel__voiceover"></div>
+            <VoiceOver role={role} scheme={attribute} pickedValue={pickedValue} />
             <div className="attribute-panel__advise"></div>
             <div className="attribute-panel__informer"></div>
         </div>

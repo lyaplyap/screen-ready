@@ -13,6 +13,7 @@ export const Main: React.FC = () => {
     const attributes = useStore(selectAttributes);
     const addedAttributes = useStore(selectAddedAttributes);
     const activeAttributeState = useStore(selectActiveAttributeState);
+    const activeRoleId = useStore((state) => state.activeRoleId);
     const selectAttribute = useStore((state) => state.selectAttribute);
     const pickAttributeValue = useStore((state) => state.pickAttributeValue);
     const addAttribute = useStore((state) => state.addAttribute);
@@ -29,6 +30,7 @@ export const Main: React.FC = () => {
                 {!activeAttributeState && <PlaceholderPanel />}
                 {activeAttributeState && (
                     <AttributePanel
+                        role={activeRoleId}
                         scheme={activeAttributeState.scheme}
                         pickedValue={activeAttributeState.pickedValue}
                         isAdded={activeAttributeState.isAdded}

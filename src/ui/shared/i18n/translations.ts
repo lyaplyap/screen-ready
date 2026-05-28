@@ -43,7 +43,35 @@ export const TRANSLATIONS: Translations = {
         'aria-header__action-delete': 'Удалить',
         // trigger bar
         'trigger-bar__action-done': 'Готово',
-        'trigger-bar__added-values': 'Выбранные атрибуты:'
+        'trigger-bar__added-values': 'Выбранные атрибуты:',
+        // voiceover — UI block
+        'voiceover__title': 'Озвучится как:',
+        'voiceover__placeholder--укажите': 'укажите',
+        'voiceover__placeholder--выберите': 'выберите',
+        // voiceover — roles
+        'voiceover-role--button': 'кнопка',
+        'voiceover-role--link': 'ссылка',
+        'voiceover-role--heading': 'заголовок',
+        'voiceover-role--radio': 'радиокнопка',
+        'voiceover-role--checkbox': 'чекбокс',
+        'voiceover-role--switch': 'переключатель',
+        // voiceover — attribute states
+        'voiceover-aria-disabled--true': 'недоступно',
+        'voiceover-aria-haspopup--true': 'есть попап с меню',
+        'voiceover-aria-haspopup--menu': 'есть попап с меню',
+        'voiceover-aria-haspopup--listbox': 'есть попап со списком',
+        'voiceover-aria-haspopup--tree': 'есть попап с деревом',
+        'voiceover-aria-haspopup--grid': 'есть попап с сеткой',
+        'voiceover-aria-haspopup--dialog': 'есть попап с модальным окном',
+        'voiceover-aria-expanded--false': 'свёрнуто',
+        'voiceover-aria-expanded--true': 'развёрнуто',
+        'voiceover-aria-pressed--false': 'не нажато',
+        'voiceover-aria-pressed--true': 'нажато',
+        'voiceover-aria-pressed--mixed': 'частично нажато',
+        'voiceover-aria-level': 'уровень',
+        'voiceover-aria-checked--true': 'отмечено',
+        'voiceover-aria-checked--false': 'не отмечено',
+        'voiceover-aria-checked--mixed': 'частично отмечено'
     },
     en: {
         // common
@@ -87,6 +115,34 @@ export const TRANSLATIONS: Translations = {
         'aria-header__action-delete': 'Delete',
         // trigger bar
         'trigger-bar__action-done': 'Done',
-        'trigger-bar__added-values': 'Selected attributes:'
+        'trigger-bar__added-values': 'Selected attributes:',
+        // voiceover — UI block
+        'voiceover__title': 'It will sound like:',
+        'voiceover__placeholder--укажите': 'fill in',
+        'voiceover__placeholder--выберите': 'choose',
+        // voiceover — roles
+        'voiceover-role--button': 'button',
+        'voiceover-role--link': 'link',
+        'voiceover-role--heading': 'heading',
+        'voiceover-role--radio': 'radio',
+        'voiceover-role--checkbox': 'checkbox',
+        'voiceover-role--switch': 'switch',
+        // voiceover — attribute states
+        'voiceover-aria-disabled--true': 'dimmed',
+        'voiceover-aria-haspopup--true': 'menu pop-up',
+        'voiceover-aria-haspopup--menu': 'menu pop-up',
+        'voiceover-aria-haspopup--listbox': 'listbox pop-up',
+        'voiceover-aria-haspopup--tree': 'tree pop-up',
+        'voiceover-aria-haspopup--grid': 'grid pop-up',
+        'voiceover-aria-haspopup--dialog': 'dialogue pop-up',
+        'voiceover-aria-expanded--false': 'collapsed',
+        'voiceover-aria-expanded--true': 'expanded',
+        'voiceover-aria-pressed--false': 'not pressed',
+        'voiceover-aria-pressed--true': 'pressed',
+        'voiceover-aria-pressed--mixed': 'partially pressed',
+        'voiceover-aria-level': 'level',
+        'voiceover-aria-checked--true': 'checked',
+        'voiceover-aria-checked--false': 'not checked',
+        'voiceover-aria-checked--mixed': 'partially checked'
     }
 };
