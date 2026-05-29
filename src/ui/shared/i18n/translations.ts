@@ -96,7 +96,28 @@ export const TRANSLATIONS: Translations = {
         // warning — aria-haspopup
         'warning--match-role-and-interactive': 'Важно, чтобы значение aria-haspopup совпадало с ролью попапа, и чтобы элемент, который открывает попап, обязательно был интерактивным',
         // warning — aria-expanded
-        'warning--sync-with-state': 'Значение aria-expanded обязательно должно меняться вместе с реальным состоянием элемента — иначе скринридер озвучит неверное состояние'
+        'warning--sync-with-state': 'Значение aria-expanded обязательно должно меняться вместе с реальным состоянием элемента — иначе скринридер озвучит неверное состояние',
+        // preview — labels
+        'preview-button__label': 'Button',
+        'preview-link__label': 'Link',
+        'preview-heading__label': 'Заголовок',
+        'preview-heading__label--1': 'Заголовок 1 уровня',
+        'preview-heading__label--2': 'Заголовок 2 уровня',
+        'preview-heading__label--3': 'Заголовок 3 уровня',
+        'preview-heading__label--4': 'Заголовок 4 уровня',
+        'preview-heading__label--5': 'Заголовок 5 уровня',
+        'preview-heading__label--6': 'Заголовок 6 уровня',
+        'preview-link__expand-label': 'Подробнее',
+        'preview-accordion__content': 'Развёрнутое содержимое',
+        'preview-icon-button__fallback-label': 'добавить',
+        'preview-icon-link__fallback-label': 'открыть в новой вкладке',
+        'preview-option__label': 'Опция',
+        // preview — haspopup items
+        'preview-haspopup-item--menu': 'пункт меню',
+        'preview-haspopup-item--listbox': 'элемент списка',
+        'preview-haspopup-item--tree': 'узел дерева',
+        'preview-haspopup-item--grid': 'ячейка',
+        'preview-haspopup-item--dialog': 'Это диалог'
     },
     en: {
         // common
@@ -193,6 +214,27 @@ export const TRANSLATIONS: Translations = {
         // warning — aria-haspopup
         'warning--match-role-and-interactive': 'The aria-haspopup value must match the popup\'s role, and the element opening the popup must be interactive',
         // warning — aria-expanded
-        'warning--sync-with-state': 'The aria-expanded value must change together with the actual element state, otherwise the screen reader will announce the wrong state'
+        'warning--sync-with-state': 'The aria-expanded value must change together with the actual element state, otherwise the screen reader will announce the wrong state',
+        // preview — labels
+        'preview-button__label': 'Button',
+        'preview-link__label': 'Link',
+        'preview-heading__label': 'Heading',
+        'preview-heading__label--1': 'Heading 1st level',
+        'preview-heading__label--2': 'Heading 2nd level',
+        'preview-heading__label--3': 'Heading 3rd level',
+        'preview-heading__label--4': 'Heading 4th level',
+        'preview-heading__label--5': 'Heading 5th level',
+        'preview-heading__label--6': 'Heading 6th level',
+        'preview-link__expand-label': 'Show more',
+        'preview-accordion__content': 'Expanded content',
+        'preview-icon-button__fallback-label': 'add',
+        'preview-icon-link__fallback-label': 'open in a new tab',
+        'preview-option__label': 'Option',
+        // preview — haspopup items
+        'preview-haspopup-item--menu': 'menu item',
+        'preview-haspopup-item--listbox': 'list option',
+        'preview-haspopup-item--tree': 'tree node',
+        'preview-haspopup-item--grid': 'cell',
+        'preview-haspopup-item--dialog': 'This is a dialog'
     }
 };

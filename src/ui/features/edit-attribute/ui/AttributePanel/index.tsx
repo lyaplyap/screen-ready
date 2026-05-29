@@ -7,6 +7,7 @@ import { useTranslation } from '@ui/shared/i18n';
 import { Advice } from '../Advice';
 import { AriaHeader } from '../AriaHeader';
 import { AttributeValues } from '../AttributeValues';
+import { Preview } from '../Preview';
 import { VoiceOver } from '../VoiceOver';
 import { Warning } from '../Warning';
 
@@ -52,7 +53,7 @@ export const AttributePanel: React.FC<AttributePanelProps> = ({
                 />
                 <W3C description={t(`w3c__description--${id}`)} link={w3c} />
             </div>
-            <div className="attribute-panel__preview"></div>
+            <Preview role={role} scheme={attribute} pickedValue={pickedValue} />
             <VoiceOver role={role} scheme={attribute} pickedValue={pickedValue} />
             <Advice scheme={attribute} />
             <Warning scheme={attribute} />
