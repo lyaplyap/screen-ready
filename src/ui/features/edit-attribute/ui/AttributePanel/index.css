@@ -1,8 +1,10 @@
 .attribute-panel {
-    margin: 8px 12px 24px 12px;
+    padding: 8px 12px 24px 12px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+    min-height: 0;
+    overflow-y: auto;
 }
 
 .attribute-panel__header {

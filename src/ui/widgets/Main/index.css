@@ -1,12 +1,12 @@
 .main {
     display: grid;
-    grid-template-rows: 1fr auto;
-    gap: 16px;
+    min-height: 0;
 }
 
 .steering-wheel {
     display: grid;
-    margin: 0 16px;
+    padding: 0 16px;
     gap: 12px;
     grid-template-columns: 286px 1fr;
+    min-height: 0;
 }

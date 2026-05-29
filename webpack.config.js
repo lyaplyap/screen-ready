@@ -29,7 +29,6 @@ module.exports = (env, argv) => ({
     watchOptions: {
         ignored: /node_modules|\.git|dist|storybook-static|coverage/,
         aggregateTimeout: 300,
-        poll: 1000,
     },
     performance: {
         hints: argv.mode === 'production' ? 'warning' : false,
